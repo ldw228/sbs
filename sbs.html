@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>SBS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!--    <link rel="stylesheet" href="../190819/css/reset.css">-->
+    <link rel="stylesheet" href="../sbs/css/sbs.css">
+<!--    <link rel="stylesheet" href="css/main.css">-->
+    <script src="js/prefixfree.min.js"></script>
+    <script src="../sbs/js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+$(document).ready(function(){
+    var visual = $('#brandVisual > ul > li');
+	var button = $('#buttonList > ul > li');
+	var current = 0;
+	var setIntervalId;
+    
+    timer();
+	button.on({
+        click:function(){
+            var tg = $(this);
+            var i = tg.index();
+            button.removeClass('on');
+            tg.addClass('on');
+            move(i);
+        }
+    });
+    
+    function move(i){
+		if(current == i) retun;
+
+		var current1 = visual.eq(current);
+		var next1 = visual.eq(i);
+
+        current1.css({top:0}).stop().animate({top:'-100%'});
+		next1.css({top:'100%'}).stop().animate({top:0});
+        
+		current = i;
+    }
+    
+    $("#wrap").on({
+		mouseover:function(){
+			clearInterval(setIntervalId);
+		},
+		mouseout:function(){
+			timer();
+		}
+	});
+
+	function timer(){
+		setIntervalId = setInterval(function(){
+			var n = current + 1;
+			if (n == visual.length){
+				n = 0;
+			}
+			button.eq(n).trigger('click');
+		}, 2000);
+	}
+});
+</script>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div class="nav wrap">
+                <div class="gnb">
+                    <ul>
+                        <li class="logo">
+                            <a href="#"><img src="../sbs/img/sbs_logo.png" alt="로고"></a>
+                        </li>
+                        <li class="menu">
+                            <a href="#">드라마</a>
+                        </li>
+                        <li class="menu">
+                            <a href="#">예능</a>
+                        </li>
+                        <li class="menu">
+                            <a href="#">시사교양</a>
+                        </li>
+                        <li class="menu">
+                            <a href="#">연예</a>
+                        </li>
+                        <li class="menu">
+                            <a href="#">스포츠</a>
+                        </li>
+                        <li class="menu">
+                            <a href="#">라이프</a>
+                        </li>
+                        <li class="menu">
+                            <a href="#">뉴스</a>
+                        </li>
+                        <li class="menu">
+                            <a href="#">라디오</a>
+                        </li>
+                        <li class="menu">
+                            <a href="#">영화</a>
+                        </li>
+                        <li class="menu">
+                            <a href="#">오리지널</a>
+                        </li>
+                        <li class="menu">
+                            <a href="#"><img src="../sbs/img/search.png" alt="찾기"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="snb">
+                    <ul class="login">
+                        <li class="log">
+                            <a href="">로그인ㅣ</a>
+                        </li>
+                        <li class="cash">
+                            <a href="">이용권</a>
+                        </li>
+                    </ul>
+                    <ul class="box">
+                        <li class="onair">
+                            <a href="">온에어</a>
+                        </li>
+                        <li class="tv_table">
+                            <a href="">편성표</a>
+                        </li>
+                        <li class="clip">
+                            <a href="">클립</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="wrap">
+            <div id="brandVisual">
+                <ul>
+                    <li class="visual01"><a href="#">베너1</a></li>
+                    <li class="visual02"><a href="#">베너2</a></li>
+                    <li class="visual03"><a href="#">베너3</a></li>
+                </ul>
+            </div>
+            <div id="buttonList">
+                <ul>
+                    <li class="on"><a href="#">버튼1</a></li>
+                    <li><a href="#">버튼2</a></li>
+                    <li><a href="#">버튼3</a></li>
+                </ul>
+            </div>
+        </div>
+         <div class=bg_bl><img src="../sbs/img/bottom_bg_black.png" alt=""></div>    
+           
+        <div id="module">
+        <a href="#" class="onair">
+            <span class="text_onair">온에어</span>
+        </a>
+        <div class=main_scroll>
+                <ul class=ms_list>
+                    <li class="inner list">
+                    <a href="#" class="link1">
+                        <span>SBS 13:40 ~ 1600</span>
+                        <strong>특집 뉴스브리핑</strong>
+                    </a>
+                    <a href="#" class="hou1"><img src="../sbs/img/house.png" alt=""></a>
+                    </li>
+                    <li class="inner list">
+                    <a href="#" class="link2">
+                        <span>파워FM 14:00 ~ 1600</span>
+                        <strong>두시탈출 컬투쇼</strong>
+                    </a>
+                    <a href="#" class="hou2"><img src="../sbs/img/house.png" alt=""></a>   
+                    </li>
+                    <li class="inner list">
+                    <a href="#" class="link3">
+                        <span>러브FM 14:20 ~ 1600</span>
+                        <strong>나르샤의 아브라카다브라</strong>
+                    </a>
+                    <a href="#" class="hou3"><img src="../sbs/img/house.png" alt=""></a>     
+                    </li>
+                </ul>
+            </div>
+        <a href="http://w3.sbs.co.kr/schedule/main.do?div=m_scheduler" class="btn">
+            <span class="btn_icon"><img src="../sbs/img/Calendar.png" alt="편성표"></span>
+            <span class="btn_text">편성표</span>
+        </a>
+        </div>
+        <div id="content">
+            <div id="vod_wrap">
+            <h1>
+                <a href="#">실시간 VOD</a>
+            </h1>
+            <ul>
+                <li><a href="#">추천순</a></li>
+                <li><a href="#">인기순</a></li>
+                <li><a href="#">최신순</a></li>
+            </ul>
+            </div>
+            <div class="vod">
+                <a href="#"><img src="../sbs/img/vod1.PNG" alt=""></a>
+                <div class="vod_s">
+                    <a href="#"><img src="../sbs/img/vod2.PNG" alt=""></a>
+                    <a href="#"><img src="../sbs/img/vod3.PNG" alt=""></a>
+                    <a href="#"><img src="../sbs/img/vod4.PNG" alt=""></a>
+                    <a href="#"><img src="../sbs/img/vod5.PNG" alt=""></a>
+                </div>
+            </div>
+            <div class="vod_news">
+               <h1><a href="">뉴스</a></h1>
+                <div class="vod_news_img">
+                   <ul>
+                       <li>
+                           <a href="#">
+                              <img src="../sbs/img/vod_n1.jpg" alt="">
+                              <span>인사 안 한다고…8살 아이 앞에서 아빠 뺨 때린 군의원 </span> 
+                              <span class="news8">8뉴스</span>
+                           </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../sbs/img/vod_n2.jpg" alt="">
+                                <span>공식석상에 등장한 호날두,’노쇼’
+                                언급은 없었다</span> 
+                                <span class="news8">8뉴스 비디오머그</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">   
+                                <img src="../sbs/img/vod_n3.jpg" alt="">
+                                <span>日 언론 "오래 못 갔던 한국 불매운동, 
+                                이번엔 이례적 장기화"</span>
+                                <span class="news8">8뉴스</span> 
+                            </a>    
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="pg_wrap">
+            <h1>
+                <a href="#">SBS 프로그램</a>
+            </h1>
+            <ul>
+                <li><a href="#">드라마</a></li>
+                <li><a href="#">예능</a></li>
+                <li><a href="#">교양</a></li>
+                <li><a href="#">시사</a></li>
+                <li><a href="#">보도</a></li>
+            </ul>
+            </div>
+            <div class="vod_pg_img">
+                   <ul>
+                       <li>
+                           <a href="#">
+                              <img src="../sbs/img/pg1.jpg" alt="">
+                              <span>수상한 장모 </span> 
+                              <span class="news8">월~금 ㅣ 08:35~09:10 </span>                               
+                              <span class="heart">♡189</span>
+                           </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../sbs/img/pg2.jpg" alt="">
+                                <span>의사 요한</span> 
+                                <span class="news8">수목 ㅣ 22:00~23:10</span>
+                                <span class="heart">♡56</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">   
+                                <img src="../sbs/img/pg3.jpg" alt="">
+                                <span>힙합왕-나스나길</span>
+                                <span class="news8">금 ㅣ 23:10~00:20</span>
+                                <span class="heart">♡90</span>
+                            </a>    
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <footer>
+                <div class="sns">
+                <p>공지사항 > [공지] ‘미운 우리새끼’ 제작진 사칭 관련 주의사항 안내</p>
+                <a href="#"><img src="../sbs/img/sns_icon.PNG" alt=""></a></div>
+                <div class="footer_menu">
+                    <p class="top">SBS PR | SBS IR | 채용정보 | 이용약관 | SBS 방송편성규약 | 개인정보처리방침 | 청소년보호정책 | 시청자위원회 | IP(영상/사진) 구매
+웹광고 | SBS 제작협찬 | SBS 방송기술 | SBS 문화사업 | SBS Prism Tower 아트컬렉션 | 고객센터 | SBS앱 소개 | 사이트맵
+시청자참여 | 뉴스제보 | 고충처리인(방송피해신고) | 열린TV시청자세상 | 일일 시청자 의견 | 윤리경영신고 | 원천징수영수증발급신청
+</p>
+               <div class="footer_bottom"><img src="../sbs/img/set_gnb2_sbs.png" alt="">서울특별시 양천구 목동서로 161 | 대표이사 박정훈 | 방송관련문의 02)2061-0006 | 찾아오시는 길
+                                서울특별시 마포구 상암산로 82SBS프리즘타워 15층 | 대표이사 조재룡 | 홈페이지 이용문의 02)2001-6600 | Email
+사업자 번호 598-88-00752 | 통신 판매업 신고번호 제 2012-서울마포-1190호 | 부가통신사업 신고번호 제 2-01-17-0120호
+ⓒSBS & SBS I&M</div>
+                </div>
+            </footer>
+            
+        
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

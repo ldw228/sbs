@@ -1,0 +1,240 @@
+@charset "utf-8";
+@import url(reset.css);
+
+* { margin: 0;
+    padding: 0;}
+html { list-style:none; background-color: #000;}
+ul, li {list-style:none;}
+#container  {min-width: 1300px;}
+#header {background: url(../img/nav_bg_black.png) repeat-x center top;
+    height: 120px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 180;}
+.nav {overflow: hidden;
+    height: 90px;}
+.wrap {width: 1218px;
+    margin: 0 auto;
+    position: relative;}
+.nav .gnb {float: left; overflow: hidden;}
+.nav .gnb ul  {overflow: hidden; }
+.nav .gnb ul li {font-size: 0;
+                float: left;
+                margin-left: 8px;
+                line-height: 88px;
+                font-weight: bold;
+                color: #fff;}
+.nav .gnb ul li a {padding: 4px 8px;
+                font-size: 18px;
+                box-sizing: border-box;
+                vertical-align: middle;}
+.nav .gnb ul li a img {vertical-align: middle;}
+.nav .snb {float: right; overflow: hidden;}
+.nav .snb ul {float: left; overflow: hidden;}
+.nav .snb ul li {float: left; font-weight: bold;
+                color: #fff; line-height: 88px;}
+.nav .snb .login {margin-right: 22px;}
+.nav .snb .box {margin-top: 27px;}
+.nav .snb .box li {width: 58px; height: 34px; border: 1px solid #f4f4f4;}
+.nav .snb .box li a {text-align: center;
+    display: block;
+    width: 100%;
+    height: 34px;
+    line-height: 34px;}
+
+#brandVisual {position: relative; 
+		width:100%; height: 720px; margin:0 auto; 
+		overflow:hidden; background:#8c908c;}
+#brandVisual ul {position:absolute;  _float:left; width:100%;
+		height:720px; margin:0px; padding:0px;}
+#brandVisual li {position:absolute; width:100%; height:720px;}
+#brandVisual li a {display:block; text-indent:-9999px;}
+#brandVisual .visual01{top:0;    background:url("../img/doctor.jpg") 50% 0 no-repeat; z-index:10;}
+#brandVisual .visual02{top:100%; background:url("../img/m2.jpg") 50% 0 no-repeat;}
+#brandVisual .visual03{top:200%; background:url("../img/m3.jpg") 50% 0 no-repeat;}
+
+#buttonList:after{content:""; display:block; clear:both;}
+#buttonList li{background:url("../img/btnVisual.png") 0 -16px no-repeat; width:14px; height:15px; _float:left; position:relative; left:80%; top:-400px; overflow:hidden; margin:0 5px; cursor:pointer; z-index:20;
+margin-bottom: 10px;}
+#buttonList li.on {background-position: 0 0;}
+#buttonList li a {display:block; text-indent:-999px;}
+.bg_bl {position: relative; margin-top: -220px; z-index: 100;}
+
+#module {position: relative; width: 100%; height: 82px; margin-top: 20px; background-color:  #1e1e1e; }
+#module .onair {position: absolute;
+    top: 0;
+    padding-right: 16px;
+    height: 82px;
+    line-height: 82px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;}
+#module .onair .text_onair {font-weight: 700; padding-left: 40px; color: #109ce8;}
+#module .onair .icon_onair{position: absolute;
+    top: 0;
+    padding-right: 16px;
+    height: 82px;
+    line-height: 82px;}
+#module .main_scroll {padding: 10px 93px 10px 116px; letter-spacing: 0; overflow: hidden;}
+#module .main_scroll .ms_list {box-sizing: border-box;
+    width: 100%!important;
+    padding: 0;display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;}
+#module .main_scroll .ms_list .inner {width: 33.3%; padding-right: 2px;
+    box-sizing: border-box; white-space: normal;
+    text-align: left; overflow: hidden; display: inline-block;
+    vertical-align: top;}
+#module .main_scroll .ms_list .inner {position: relative;
+    background-color: #333;
+    height: 62px;
+    padding: 0 33px 0 12px;
+    box-sizing: border-box;}
+#module .main_scroll .ms_list .inner span {display: block;
+    padding-top: 12px;
+    font-size: 11px;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;}
+#module .main_scroll .ms_list .inner strong {line-height: 20px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #fff;}
+#module .main_scroll .ms_list .link1 span {color: #109ce8;}
+#module .main_scroll .ms_list .link2 span {color: #f46200;}
+#module .main_scroll .ms_list .link3 span {color: #f46200;}
+
+#module .main_scroll .ms_list .hou1 {position: absolute;
+    right: 0; top: 0; width: 30px; height: 30px;}
+#module .main_scroll .ms_list .hou2 {position: absolute;
+    right: 0; top: 0; width: 30px; height: 30px;}
+#module .main_scroll .ms_list .hou3 {position: absolute;
+    right: 0; top: 0; width: 30px; height: 30px;}
+#module .btn {
+    position: absolute; 
+    top: 0;
+    right: 0;
+    padding-right: 16px;
+    padding-left: 36px;
+    height: 82px;
+    line-height: 82px;
+    display: inline-block;
+    vertical-align: top;
+    }
+#module .btn .btn_icon {left: 16px; top: 50%;
+    margin-top: -7px;
+    width: 16px;
+    height: 13px;
+    position: absolute;
+    display: block;
+    font: 0/0 arial;
+    overflow: hidden; }
+#module .btn .btn_text {font-weight: 400;
+    letter-spacing: 0;
+    font-size: 14px;
+    display: block;
+    font-weight: 700;
+    letter-spacing: -1px;
+    font-size: 15px;
+    line-height: 82px;color: #fff;}
+
+
+#content {width: 1245px;
+    margin: 0 auto;
+    padding: 0 0 100px;}
+#content #vod_wrap h1 {display: block;
+    margin: 50px 0 30px;
+    text-align: center; color: #fff;}
+#content #vod_wrap ul {width: 250px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    }
+#content #vod_wrap ul:after {
+    content:""; display: block; clear: both;
+}
+#content #vod_wrap ul li {
+    float: left;
+    box-sizing: border-box;}
+#content #vod_wrap ul li a {
+    letter-spacing: -1px;
+    font-weight: 700;
+    position: relative;
+    color: #fff;
+    border: 1px solid #ededed;
+    display: block;
+    padding: 6px 18px 8px;
+    text-align: center;}
+#content .vod {height: 328px; position: relative; }
+#content .vod .vod_s {width: 600px; position: absolute; top: 0; right: 0; }
+
+
+#content .vod_news {height: 328px; position: relative;}
+#content .vod_news h1 { 
+    margin: 50px 0 50px;
+    text-align: center; color: #fff; }
+#content .vod_news .vod_news_img { width: 1245px; height: 250px;}
+#content .vod_news .vod_news_img ul {position:relative; width:100%;}
+#content .vod_news .vod_news_img ul:after {content:''; display:block; clear: both;}
+#content .vod_news .vod_news_img li {position:relative; width:33.3%; float:left; }
+#content .vod_news .vod_news_img li span {color: #fff;}
+#content .vod_news .vod_news_img li a span{position:absolute; top:237px; left:20px;text-align: justify; margin-right: 35px;}
+#content .vod_news .vod_news_img li span.news8 {padding-top: 48px; font-size: 14px;color: #9c9c9c;}
+
+
+#content #pg_wrap h1 {display: block;
+    margin: 110px 0 35px;
+    text-align: center; color: #fff;}
+#content #pg_wrap ul {width: 333px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    }
+#content #pg_wrap ul:after {
+    content:""; display: block; clear: both;
+}
+#content #pg_wrap ul li {
+    float: left;
+    box-sizing: border-box;}
+#content #pg_wrap ul li a {
+    letter-spacing: -1px;
+    font-weight: 700;
+    position: relative;
+    color: #fff;
+    border: 1px solid #ededed;
+    display: block;
+    padding: 6px 18px 8px;
+    font-size: 14px;
+    text-align: center;}
+#content .vod_pg_img { width: 1245px; height: 320px;}
+#content .vod_pg_img ul {position:relative; width:100%;}
+#content ..vod_pg_img ul:after {content:''; display:block; clear: both;}
+#content .vod_pg_img li {position:relative; width:33.3%; float:left; }
+#content .vod_pg_img li span {color: #fff;}
+#content .vod_pg_img li a span{position:absolute; top:235px; left:20px;text-align: justify; margin-right: 20px;}
+#content .vod_pg_img li span.news8 {padding-top: 48px; color: #9c9c9c;}
+#content .vod_pg_img li span.heart {padding: 48px 0 0 320px; color: #9c9c9c;}
+
+footer {position: relative;}
+footer .sns {width: 100%; float: left; padding: 20px 50px;  border-top: 1px solid #9c9c9c; border-bottom: 1px solid #9c9c9c;}
+footer .sns p {color: #fff; }
+footer .sns a img {position: absolute; float: right; top: 8px; right: 20px; }
+footer .footer_menu {position: relative;}
+footer .footer_menu p {clear: both; padding: 30px 50px;  color: #fff;}
+footer .footer_menu .footer_bottom {padding: 10px 50px 50px; color: #fff; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
